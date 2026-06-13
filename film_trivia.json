@@ -1,0 +1,72 @@
+ [ 
+  {
+    "id": 1,
+    "question": "What is considered the first Puerto Rican feature film?",
+    "options": ["El despertar de un sueño", "Romance tropical", "Maruja", "Los peloteros"],
+    "correct": 1,
+    "fact": "Romance tropical (1934), directed by Juan Emilio Viqueira, is the earliest surviving Puerto Rican feature film."
+  },
+  {
+    "id": 2,
+    "question": "Which Puerto Rican actor won an Academy Award for Best Supporting Actor in 1962?",
+    "options": ["Raúl Juliá", "José Ferrer", "Benicio del Toro", "Rita Moreno"],
+    "correct": 3,
+    "fact": "Rita Moreno won for West Side Story — she also won a Grammy, Tony and Emmy, completing the EGOT."
+  },
+  {
+    "id": 3,
+    "question": "Raúl Juliá, born in San Juan, is beloved for playing which iconic character in two early-1990s Hollywood films?",
+    "options": ["Don Corleone", "Gomez Addams", "Dracula", "Zorro"],
+    "correct": 1,
+    "fact": "Juliá played Gomez Addams in The Addams Family (1991) and Addams Family Values (1993). He earned four Tony nominations on Broadway before his film career peaked."
+  },
+  {
+    "id": 4,
+    "question": "Benicio del Toro won the Cannes Best Actor award for which film?",
+    "options": ["Traffic", "21 Grams", "Sicario", "Fear and Loathing in Las Vegas"],
+    "correct": 0,
+    "fact": "Del Toro won at Cannes 2000 for Traffic, then the Oscar for Best Supporting Actor the same year."
+  },
+  {
+    "id": 5,
+    "question": "Which production company, founded in Puerto Rico, produced 'Los peloteros' (1953)?",
+    "options": ["Columbia Pictures PR", "Produciones Borinquen", "DIVEDCO", "ICP Films"],
+    "correct": 2,
+    "fact": "DIVEDCO (Division of Community Education) produced social and cultural films from the 1940s–70s."
+  },
+  {
+    "id": 6,
+    "question": "José Ferrer was the first Latino actor to win Best Actor at the Oscars. For which film?",
+    "options": ["Moulin Rouge", "Cyrano de Bergerac", "The Caine Mutiny", "Lawrence of Arabia"],
+    "correct": 1,
+    "fact": "José Ferrer won in 1951 for Cyrano de Bergerac. He was born in Santurce, Puerto Rico."
+  },
+  {
+    "id": 7,
+    "question": "Before switching to acting, what subject did Benicio del Toro originally enroll to study at UC San Diego?",
+    "options": ["Medicine", "Law", "Engineering", "Business"],
+    "correct": 3,
+    "fact": "Del Toro enrolled at UC San Diego intending to major in business. An acting class convinced him to change course entirely; he later trained at the Stella Adler Studio in New York."
+  },
+  {
+    "id": 8,
+    "question": "Which Puerto Rican-set film received a Best Picture Oscar nomination in 1962?",
+    "options": ["Blackboard Jungle", "West Side Story", "The Pawnbroker", "Bye Bye Birdie"],
+    "correct": 1,
+    "fact": "West Side Story won 10 Oscars including Best Picture, depicting the Puerto Rican community in NYC."
+  },
+  {
+    "id": 9,
+    "question": "What government agency has supported Puerto Rican film production since the 1950s?",
+    "options": ["Puerto Rico Film Commission", "ICP", "DIVEDCO", "PRIDCO"],
+    "correct": 0,
+    "fact": "The Puerto Rico Film Commission has attracted over $700M in production spending to the island."
+  },
+  {
+  "id": 10,
+  "question": "Raúl Juliá won a posthumous Golden Globe and Emmy Award for playing which real-life figure in a 1994 film?",
+  "options": ["Óscar Romero", "Ernesto 'Che' Guevara", "Chico Mendes", "Pablo Escobar"],
+  "correct": 2,
+  "fact": "In The Burning Season (1994) Juliá portrayed Brazilian environmental activist Chico Mendes. He died in October 1994 before the awards were given — both were posthumous."
+  }
+ ]

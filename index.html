@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="cs_Tab">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J Pagán | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!--servidor público que aloja el archivo de la librería-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- TAU PROLOG — logic paradigm, runs entirely in the browser (no server) -->
+    <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.2/modules/core.min.js"></script>
+</head>
+<body>
+
+    <nav class="tab-container">
+        <button class="tab-button" onclick="switchTab('film_Tab', this)">FILM</button>
+        <button class="tab-button active" onclick="switchTab('cs_Tab', this)">COMPUTER SCIENCE</button>
+        <button class="tab-button" onclick="switchTab('trader_Tab', this)">OPTIONS TRADER</button>
+    </nav>
+
+    <main class="content-wrapper">
+
+<!-- ============================= Film Section ============================= -->
+    <section id="film_Tab" class="tab-content">
+        <div class="main-card">
+            <div class="left-side">
+                <img src="film_profile_image.jpg" alt="J Pagán" class="profile-pic">
+            </div>
+            <div class="right-side">
+                <h1>Hello, I'm Jonisse Pagán.</h1>
+                <h2 class="job-title">Actress</h2>
+                <p>Actress with an software development background. Available for film, TV and voice acting.</p>
+
+                <div class="contact-info">
+                    <p>📞 (787) 654-3210</p>
+                    <p>📧 j_pagan@email.com</p>
+                    <p>📍 Puerto Rico</p>
+                </div>
+
+                <!--button class="download-btn" onclick="downloadCVasPDF('film-cv-display')">Download CV 📥</button-->
+            </div>
+        </div>
+
+        <div id="trivia-app" class="cv-content"></div>
+    </section>
+
+    <!-- TypeScript compiler CDN (once) -->
+    <script src="https://cdn.jsdelivr.net/npm/typescript@5.3.3/lib/typescript.min.js"></script>
+
+    <!-- TypeScript runtime loader — must come BEFORE the .ts tag -->
+    <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const scripts = document.querySelectorAll('script[type="text/typescript-transpiled"]');
+        for (const s of scripts) {
+            const src = s.getAttribute('src');
+            if (!src) continue;
+            const res    = await fetch(src);
+            const tsCode = await res.text();
+            const jsCode = ts.transpileModule(tsCode, {
+                compilerOptions: { target: ts.ScriptTarget.ES2015 }
+            }).outputText;
+            const tag = document.createElement('script');
+            tag.textContent = jsCode;
+            document.body.appendChild(tag);
+        }
+    });
+    </script>
+
+    <!-- PARADIGM: OOP — TypeScript class FilmTrivia (transpiled at runtime by loader above) -->
+    <script src="film_trivia.ts" type="text/typescript-transpiled"></script>
+
+<!-- ============================= Computer Science Section ============================= -->
+    <section id="cs_Tab" class="tab-content active">
+    <div class="main-card">
+        <div class="left-side">
+            <img src="cs_profile_image.png" alt="Jonisse Pagán" class="profile-pic">
+        </div>
+        <div class="right-side">
+            <h1>Hello, I'm Jonisse Pagán.</h1>
+            <h2 class="job-title">Information Systems Technician</h2>
+            <p>Computer Science student at UPRM. Passionate about software development.</p>
+            
+            <div class="contact-info">
+                <p>📞 Phone: (787) 654-3210</p>
+                <p>📧 Email: j_pagan@email.com</p>
+                <p>📍 Location: Puerto Rico</p>
+            </div>
+            <button class="download-btn" onclick="downloadCVasPDF()">Download CV 📥</button>
+        </div>
+    </div>
+
+    <!-- CV + Prolog side by side -->
+    <div class="cv-prolog-wrapper">
+
+        <!-- CV's 10 categories rendered by JavaScript -->
+        <div id="cv-display" class="cv-content"></div>
+
+        <!-- LOGIC PARADIGM — Tau Prolog interpreter running in the browser -->
+        <div class="prolog-panel">
+            <h3>Knowledge Base</h3>
+            <p style="font-size:0.82rem; color:#888; margin-top:0;">
+                Try either one: <code>knows(Jonisse, X)</code> · <code>paradigm(python, X)</code> · <code>likes(Jonisse, X)</code>
+            </p>
+            <input  id="prolog-input" type="text"
+                    placeholder="paradigm(cpp, X)"
+                    style="width:100%; padding:8px; box-sizing:border-box; border-radius:8px;
+                           border:1px solid #ccc; font-size:0.9rem;">
+            <button onclick="runProlog()"
+                    style="margin-top:8px; padding:7px 20px; border-radius:20px;
+                           background:var(--primary-color); color:#fff; border:none;
+                           cursor:pointer; font-weight:bold;">
+                Query
+            </button>
+            <pre id="prolog-output"
+                 style="background:#111; color:#0f0; padding:12px; border-radius:10px;
+                        margin-top:10px; font-size:0.85rem; min-height:60px;
+                        white-space:pre-wrap; word-break:break-word;"></pre>
+            <p style="font-size:0.85rem; color:#666;">
+                Logic paradigm · Tau Prolog is a Prolog interpreter written in JavaScript, so everything happens in 
+                the serverless browser. It also gives input/output if the user writes its own queries.
+            </p>
+        </div>
+    </div>
+
+    <!-- CV footer note -->
+    <p style="font-size:0.82rem; color:#888; max-width:1100px; margin: -10px auto 30px auto; padding: 0 4px;">
+        ⚠️ Some entries in this CV are fictional and were added for academic project purposes.
+        To show a hidden entry in the PDF export, open <code>cv.json</code> and set its <code>"is_active"</code> field to <code>true</code>.
+        Entries marked <code>false</code> are parsed but excluded from rendering.
+    </p>
+
+    <script>
+
+    const session = pl.create();
+
+    const knowledgeBase = `
+        paradigm(python, imperative).
+        paradigm(cojurescript, functional).
+        paradigm(haskell, functional).
+        paradigm(prolog, logic).
+        paradigm(java, oop).
+        paradigm(cpp, oop).
+        paradigm(javascript, multiparadigm).
+
+        likes(Jonisse, trading).
+        likes(Jonisse, acting).
+        likes(Jonisse, programming).
+        knows(Jonisse, 'c/c++').
+        knows(Jonisse, python).
+        knows(Jonisse, javascript).
+        knows(Jonisse, java).
+        knows(Jonisse, prolog).
+        knows(Jonisse, 'web development').
+        knows(Jonisse, 'options trading').
+
+        useful(X) :- likes(Jonisse, X).
+    `;
+
+    session.consult(knowledgeBase);
+
+    function runProlog(){
+        const raw  = document.getElementById('prolog-input').value;
+        const output = document.getElementById('prolog-output');
+        output.textContent = '';
+
+        if (!raw) { output.textContent = 'Enter a query.'; return; }
+
+        // Auto-add period so the user does not have to type it
+        const query = raw.endsWith('.') ? raw : raw + '.';
+        
+        session.query(query, {
+            success: () => {
+                let results = [];
+                // Collect up to 10 answers (for queries with multiple solutions)
+                function getNext() {
+                    session.answer({
+                        success: ans => {
+                            results.push(pl.format_answer(ans));
+                            if (results.length < 10) getNext();
+                            else { results.push('...'); output.textContent = results.join('\n'); }
+                        },
+                        fail: () => {
+                            output.textContent = results.length
+                                ? results.join('\n')
+                                : 'false.';
+                        },
+                        error: e => { output.textContent = 'Error: ' + e; }
+                    });
+                }
+                getNext();
+            },
+            error: e => { output.textContent = 'Query error: ' + e; }
+        });
+    }
+
+    // Allow pressing Enter to run the query
+    document.getElementById('prolog-input')
+            .addEventListener('keydown', e => { if (e.key === 'Enter') runProlog(); });
+    </script>
+    </section>
+
+<!-- ============================= Trader Section ============================= -->
+    <section id="trader_Tab" class="tab-content">
+        <div class="main-card">
+            <div class="left-side">
+                <img src="trader_profile_image.jpg" alt="J Pagán" class="profile-pic" style="transform: scaleX(-1);">
+            </div>
+            <div class="right-side">
+                <h1>Hello, I'm Jonisse Pagán.</h1>
+                <h2 class="job-title">Options Trader</h2>
+                <p>Options trader and trading bot developer. Monitoring of options and institutional flows.</p>
+
+                <div class="contact-info">
+                    <p>📞 (787) 654-3210</p>
+                    <p>📧 j_pagan@email.com</p>
+                    <p>📍 Puerto Rico</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tape flows rendered by renderTradingFlows() in app.js -->
+        <div id="trader-flows" class="cv-content"></div>
+
+        <!-- IMPERATIVE PARADIGM — Python via PyScript -->
+        <div class="cv-content" style="margin-top: 20px;">
+            <h3>Black-Scholes Options Pricer</h3>
+            <p style="font-size:0.85rem; color:#666;">Imperative paradigm · Python via PyScript</p>
+
+            <div id="bsm-calculator" style="display:flex; flex-wrap:wrap; gap:12px; margin-top:12px;">
+                <label>Stock Price (S) <input id="S"     type="number" value="150"  style="display:block; padding:6px; border-radius:6px; border:1px solid #ccc;"></label>
+                <label>Strike (K)      <input id="K"     type="number" value="155"  style="display:block; padding:6px; border-radius:6px; border:1px solid #ccc;"></label>
+                <label>Days to Expiration <input id="T" type="number" value="30" step="1" min="1" style="display:block; padding:6px; border-radius:6px; border:1px solid #ccc;"></label>
+                <label>Volatility (σ, %) <input id="sigma" type="number" value="30"   style="display:block; padding:6px; border-radius:6px; border:1px solid #ccc;"></label>
+                <label>Risk-free (r, %)  <input id="r"     type="number" value="5"    style="display:block; padding:6px; border-radius:6px; border:1px solid #ccc;"></label>
+            </div>
+            <button id="calc-btn"
+                    py-click="calculate"
+                    style="margin-top:14px; padding:10px 28px; border-radius:25px;
+                        background:var(--primary-color); color:#fff; border:none;
+                        cursor:pointer; font-size:1rem; font-weight:bold;">
+                Calculate
+            </button>
+            <pre id="bsm-output"
+                style="background:#111; color:#0f0; padding:15px; border-radius:10px;
+                        margin-top:12px; font-size:0.9rem; min-height:60px;"></pre>
+            <p style="font-size:0.82rem; color:#888; margin-top:14px; margin-bottom:0;">
+                Imperative paradigm · Python via PyScript (WebAssembly).
+                The pricer follows a strict sequential execution model: inputs are read one by one,
+                intermediate variables are assigned step by step (<code>d1</code> → <code>d2</code> → price → Greeks),
+                and the result is written directly to the DOM. Control flow is explicit and stateful — the defining trait of imperative programming.
+            </p>
+        </div>
+
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+        <script type="py">
+import math
+from js import document
+
+def norm_cdf(x):
+    return 0.5 * (1 + math.erf(x / math.sqrt(2)))
+
+def black_scholes(S, K, T, sigma, r):
+    d1 = (math.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))
+    d2 = d1 - sigma * math.sqrt(T)
+
+    call = S * norm_cdf(d1) - K * math.exp(-r * T) * norm_cdf(d2)
+    put  = K * math.exp(-r * T) * norm_cdf(-d2) - S * norm_cdf(-d1)
+
+    # Greeks
+    delta_call =  norm_cdf(d1)
+    delta_put  =  norm_cdf(d1) - 1
+    gamma = math.exp(-d1**2 / 2) / (S * sigma * math.sqrt(2 * math.pi * T))
+    theta_call = (-(S * math.exp(-d1**2/2) * sigma) / (2 * math.sqrt(2 * math.pi * T))
+                - r * K * math.exp(-r * T) * norm_cdf(d2)) / 365
+    vega  = S * math.sqrt(T) * math.exp(-d1**2 / 2) / math.sqrt(2 * math.pi) / 100
+
+    return call, put, delta_call, delta_put, gamma, theta_call, vega
+
+def calculate(event):
+    S     = float(document.getElementById("S").value)
+    K     = float(document.getElementById("K").value)
+    T     = float(document.getElementById("T").value) / 365
+    sigma = float(document.getElementById("sigma").value) / 100
+    r     = float(document.getElementById("r").value) / 100
+
+    call, put, dc, dp, gamma, theta, vega = black_scholes(S, K, T, sigma, r)
+
+    output = f"""
+CALL Price  : ${call:.4f}
+PUT  Price  : ${put:.4f}
+Days to exp : {int(T * 365)} day
+
+── Greeks ──────────────
+Delta (call): {dc:.4f}
+Delta (put) : {dp:.4f}
+Gamma       : {gamma:.4f}
+Theta/day   : {theta:.4f}
+Vega (per 1%IV): {vega:.4f}
+    """
+    document.getElementById("bsm-output").textContent = output
+        </script>
+
+    </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

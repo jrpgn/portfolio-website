@@ -1,0 +1,219 @@
+/* --- COLOR DEFINITION PER THEME--- */
+:root[data-theme="film_Tab"]{
+    --primary-color: #e91e62b5;
+    --bg-color: #f0f2f5;
+    --text-color: #444444;
+}
+
+:root[data-theme="cs_Tab"]{
+    --primary-color: #ff5900;
+    --bg-color: #0d11170f;
+    --text-color: #000000;
+}
+
+:root[data-theme="trader_Tab"]{
+    --primary-color: #2196f3;
+    --bg-color: #f0f2f5;
+    --text-color: #1c1e21;
+}
+
+body{
+    margin: 0;
+    font-family: Avenir,sans-serif, Tahoma, Geneva, Verdana;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.9s ease;
+}
+
+/* Horizontal Tabs */
+.tab-container{
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* MAIN TABS */
+.tab-button{
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.9s;
+}
+
+.tab-button.active{
+    opacity: 1;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* --- SECTIONS CONTROL --- */
+.tab-content{
+    display: none;
+    padding: 25px 50px 50px 50px;
+    min-height: 80vh;
+    animation: fadeIn 0.9s;
+}
+.tab-content.active{
+    display: block;
+}
+.hero-image{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--text-color);
+    border-radius: 15px;
+}
+@keyframes fadeIn{
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- TABS SECTION --- */
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(150, 150, 150, 0.15);
+    border-radius: 20px;
+    width: fit-content;
+    margin: 10px auto 5px auto;
+    padding: 6px;
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+.tab-button {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.9s ease;
+}
+.tab-button:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.05);
+}
+.tab-button.active {
+    opacity: 1;
+    border-color: white;
+    color: #000;
+    background: rgba(0, 0, 0, 0.2);
+}
+:root[data-theme="cs_Tab"] .tab-button.active {
+    background: rgba(255, 255, 255, 0.9);
+}
+/* --- MAIN CARD CS SECTION --- */
+.main-card{
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+    color: #333;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto 20px auto;
+}
+.left-side{
+    flex: 1;
+    /* Por si la imagen no carga; fondo de color */
+    background-color: #ddd;
+}
+.profile-pic{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.right-side{
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.job-title{
+    color: var(--primary-color);
+}
+
+/* --- DOWNLOAD BUTTON SECTION --- */
+
+.download-btn{
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 12px 24px;
+    width: max-content;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.9s ease, box-shadow 0.9s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.download-btn:hover{
+    transform: translateY(-3px); /* Se levanta un poquito al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+:root[data-theme="film_Tab"] .download-btn,
+:root[data-theme="trader_Tab"] .download-btn {
+    color: #ffffff;
+}
+
+/* --- CV SECTION --- */
+.cv-content{
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    color: #2f2c2c;
+    margin: 0 auto 40px auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* --- CV + PROLOG SIDE BY SIDE (cs_Tab) --- */
+.cv-prolog-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 20px auto;
+    align-items: flex-start;
+}
+.cv-prolog-wrapper #cv-display {
+    flex: 2;
+    margin: 0;
+    min-width: 0;
+}
+.prolog-panel {
+    flex: 1;
+    min-width: 240px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    color: #2f2c2c;
+    box-sizing: border-box;
+    position: sticky;
+    top: 80px;
+}

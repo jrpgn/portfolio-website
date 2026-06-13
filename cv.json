@@ -1,0 +1,202 @@
+{
+  "profile": {
+    "name": "Jonisse Pagán",
+    "title": "Information Systems Technician | CS Student | Programmer",
+    "contact": {
+      "email": "j_pagan@email.com",
+      "phone": "(787) 654-3210",
+      "location": "Mayagüez, Puerto Rico"
+    }
+  },
+  "categories": [
+    {
+      "id": 1,
+      "category_name": "Contact Information",
+      "content": "j_pagan@email.com · (787) 654-3210 · Mayagüez, Puerto Rico · github.com/jrpgn",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "category_name": "Personal Profile",
+      "items": [
+        {
+          "detail": "Navy veteran and Information Systems Technician (IT rating) with 4 years of active-duty experience maintaining shipboard network infrastructure, cryptographic systems, and voice/data communications. Currently pursuing a B.S. in Computer Science at the University of Puerto Rico, Mayagüez (UPRM), where academic coursework is reinforced by hands-on programming projects in systems design, automation, and web development.",
+          "is_active": true
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "category_name": "Education",
+      "items": [
+        {
+          "detail": "Master of Finance - MIT Sloan (in progress)",
+          "is_active": false
+        },
+        {
+          "detail": "B.S. in Computer Science — University of Puerto Rico, Mayagüez (UPRM). Relevant coursework: Databases, Data Structures, Operating Systems, Computer Networks, Software Engineering, Lineal Algebra.",
+          "is_active": true
+        },
+        {
+          "detail": "Information Systems Technician (IT) Class A Technical School — Center for Information Warfare Training, Pensacola, FL, 2020. Graduated with honors. Curriculum covered networking fundamentals (TCP/IP, DNS, DHCP), systems administration, and Navy telecommunications.",
+          "is_active": true
+        },
+        {
+          "detail": "High School Diploma — Escuela Superior Eugenio María de Hostos, Mayagüez, PR, 2013.",
+          "is_active": true
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "category_name": "Military Service",
+      "items": [
+        {
+          "detail": "Information Systems Technician — U.S. Navy, Active Duty, 2019–2023. Administered and maintained LAN/WAN network systems ashore Techical Control Facility - NCTS, supporting 300+ personnel. Managed classified and unclassified computer networks in compliance with STIG and NIST security guidelines.",
+          "is_active": true
+        },
+        {
+          "detail": "Operated and maintained Navy Multiband Terminal (NMT) satellite communications systems, ensuring 99.8% uptime during three overseas deployments.",
+          "is_active": true
+        },
+        {
+          "detail": "Performed system hardening, vulnerability patching, and quarterly audits on Windows Server and RHEL environments. Trained junior sailors on network troubleshooting procedures and OPSEC policies.",
+          "is_active": true
+        },
+        {
+          "detail": "Honorably Discharged, 2023. Final command: NCTS, Virginia.",
+          "is_active": true
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 5,
+      "category_name": "Technical Skills",
+      "items": [
+        {
+          "detail": "Programming Languages: Python, C/C++, JavaScript (ES6+), Java, Prolog, HTML/CSS.",
+          "is_active": true
+        },
+        {
+          "detail": "Networking & Systems: TCP/IP, DNS, DHCP, VLANs, Cisco IOS, Windows Server 2019, RHEL 8, Active Directory, VMware.",
+          "is_active": true
+        },
+        {
+          "detail": "Cybersecurity: NIST RMF, DISA STIGs, vulnerability scanning (Nessus), basic penetration testing concepts, PKI and cryptographic key management.",
+          "is_active": true
+        },
+        {
+          "detail": "Developer Tools: Git, GitHub, VS Code, Linux CLI, Docker (basic).",
+          "is_active": true
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 6,
+      "category_name": "Programming Projects",
+      "items": [
+        {
+          "detail": "Personal Web Portfolio (HTML/CSS/JavaScript/Python/Prolog/TypeScript) — Multi-tab portfolio implementing six programming paradigms in the browser: OOP (TypeScript trivia engine), Imperative (Python Black-Scholes pricer via PyScript), Logic (Tau Prolog knowledge base), Functional (JS filter/map pipelines), Asynchronous (async/await JSON fetch), and Event-Driven (DOM event handlers).",
+          "is_active": true
+        },
+        {
+          "detail": "Options Flow Scanner (Python) — Command-line tool that parses real-time options tape data to flag unusual institutional activity. Uses volume thresholds, premium filters, and expiration analysis to surface high-conviction trades. Built with pandas and a custom alerting module.",
+          "is_active": true
+        },
+        {
+          "detail": "Network Uptime Monitor (Python/Bash) — Automated script that pings a list of hosts, logs response times to a CSV, and emails an alert when a node drops offline. Deployed on a Raspberry Pi during Navy service for personal lab use.",
+          "is_active": true
+        },
+        {
+          "detail": "Inventory Management CLI (C++) — Terminal application for tracking hardware assets with CRUD operations, file persistence via binary serialization, and a simple search index. Developed for UPRM Data Structures coursework.",
+          "is_active": true
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 7,
+      "category_name": "Certifications",
+      "items": [
+        {
+          "detail": "CompTIA Security+ (SY0-701) — Valid 2022–2025. DoD 8570 IAT Level II compliant.",
+          "is_active": true
+        },
+        {
+          "detail": "CompTIA Network+ (N10-008) — Issued 2021.",
+          "is_active": true
+        },
+        {
+          "detail": "Cisco Certified Network Associate (CCNA) — In progress, expected 2025.",
+          "is_active": true
+        },
+        {
+          "detail": "Navy Information Assurance Workforce (IAWF) Certification — IA Technical Level II, 2022.",
+          "is_active": false
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 8,
+      "category_name": "Awards and Honors",
+      "items": [
+        {
+          "detail": "Navy and Marine Corps Achievement Medal (NAM) — Awarded for superior performance as LAN Administrator during COMPTUEX workup exercise, 2022. Citation recognized zero network downtime across 14-day continuous operations.",
+          "is_active": true
+        },
+        {
+          "detail": "Good Conduct Medal — Awarded for four years of honorable, faithful service without disciplinary action, 2023.",
+          "is_active": true
+        },
+        {
+          "detail": "UPRM Dean's List — Spring 2024. GPA: 3.7 / 4.0.",
+          "is_active": true
+        },
+        {
+          "detail": "Navy Expeditionary Medal · Global War on Terrorism Service Medal · National Defense Service Medal",
+          "is_active": false
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 9,
+      "category_name": "Languages",
+      "items": [
+        {
+          "detail": "Spanish — Native proficiency (reading, writing, speaking).",
+          "is_active": true
+        },
+        {
+          "detail": "English — Full professional proficiency. All Navy technical training and documentation conducted in English.",
+          "is_active": true
+        }
+      ],
+      "is_active": true
+    },
+    {
+      "id": 10,
+      "category_name": "Volunteer and Community",
+      "items": [
+        {
+          "detail": "UPRM Cinematheqe Student Branch — Active member. Participates in weekly workshops on filming and film festivals.",
+          "is_active": true
+        },
+        {
+          "detail": "Coquí Hacks Hackathon (2024) — Competed as part of a 3-person team; developed a real-time campus bus tracker using Python + GTFS data feeds.",
+          "is_active": true
+        },
+        {
+          "detail": "Veteran Mentor — Informally guides newly separated veterans transitioning into UPRM, sharing resources for VA education benefits and advising on course sequencing.",
+          "is_active": true
+        }
+      ],
+      "is_active": true
+    }
+  ]
+}
