@@ -1,4 +1,4 @@
-# J Pagán — Programming Paradigms Portfolio
+# Programming Paradigms Portfolio
 
 A multi-tab personal portfolio website built for **CCOM/ICOM** at UPRM. The project demonstrates six programming paradigms running entirely in the browser, plus a curriculum vitae rendered from a JSON data source.
 
