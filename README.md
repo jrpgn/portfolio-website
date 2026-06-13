@@ -1,6 +1,6 @@
 # Programming Paradigms Portfolio
 
-A multi-tab personal portfolio website built for **COMP - 4036** at UPRM. The project demonstrates six programming paradigms running entirely in the browser, plus a curriculum vitae rendered from a JSON data source.
+A multi-tab personal portfolio website built for COMP - 4036 at UPRM. The project demonstrates six programming paradigms running entirely in the browser, plus a curriculum vitae rendered from a JSON data source.
 
 ---
 
